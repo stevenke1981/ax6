@@ -1,0 +1,1 @@
+make image PROFILE="redmi_ax6" PACKAGES="luci-appkmod-batman-adv  batctl-full   wpad-mesh-wolfssl -adblock luci-app-dawn luci luci-theme-openwrt-2020" FILES="files"
