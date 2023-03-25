@@ -1,0 +1,34 @@
+http://192.168.31.1/cgi-bin/luci/;stok=5260d520a8439034e0a9522f002bf7d1/web/home#router
+
+
+ nvram get flag_last_success
+1
+nvram set flag__last_success=0
+nvram set flag_boot_rootfs=0
+nvram commit
+reboot
+
+
+ubiformat /dev/mtd12 -y -f /tmp/openwrt.ubi
+nvram set flag__last_success=0
+nvram set flag_boot_rootfs=0
+nvram commit
+reboot
+
+
+
+ubiformat /dev/mtd13 -y -f /tmp/openwrt.ubi
+nvram set flag__last_success=1
+nvram set flag_boot_rootfs=1
+nvram commit
+reboot
+
+####################mtd12##############
+fw_setenv flag_last_success 0
+fw_setenv flag_boot_rootfs 0
+
+##############已刷入過渡openwrt 固件 mtd13####################
+
+ubiformat /dev/mtd13 -y -f /tmp/openwrt.ubi
+fw_setenv flag_last_success 1
+fw_setenv flag_boot_rootfs 1
