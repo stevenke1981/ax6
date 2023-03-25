@@ -1,0 +1,1 @@
+http://192.168.31.1/cgi-bin/luci/;stok=337ab749bfdb5302f85b307676f494f1/api/xqsystem/extendwifi_connect_inited_router?ssid=ap&password=12345678&admin_username=root&admin_password=co047787441&admin_nonce=xxx
